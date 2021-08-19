@@ -6,8 +6,16 @@ jobs:
       - image: alpine
     steps:
       - run: return 1
+  pass:
+    docker:
+      - image: alpine
+    steps:
+      - run: return 0
 
 workflows:
+  some-check:
+    jobs:
+      - pass
   PR-not-allowed-in-master:
     jobs:
       - fail-successfully:
