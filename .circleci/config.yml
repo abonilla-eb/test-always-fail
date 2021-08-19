@@ -10,6 +10,8 @@ jobs:
 workflows:
   PR-not-allowed-in-master:
     jobs:
-      - fail-successfully
-    only:
-      - master
+      - fail-successfully:
+          filters:
+            branches:
+              only:
+                - master
