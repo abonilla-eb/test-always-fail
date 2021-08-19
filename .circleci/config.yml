@@ -23,3 +23,5 @@ workflows:
             branches:
               only:
                 - master
+              ignore:
+                - main
